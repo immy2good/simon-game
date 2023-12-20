@@ -1,6 +1,8 @@
 
-var gamePattern = [];
-var buttonColours = ["red", "blue", "green", "yellow"];
+let gamePattern = [];
+let  buttonColours = ["red", "blue", "green", "yellow"];
+let userClickedPattern = [];
+console.log(userClickedPattern);
 
 function nextSequence() {
     var randomNumber = Math.floor(Math.random() * 3);
@@ -48,3 +50,10 @@ gamePattern.push(randomChosenColour);
 
 
 // });
+
+
+$("yellow").click(function () {
+var buttonId = $(this).attr("id");
+userClickedPattern.push(buttonId);
+console.log(userClickedPattern);
+});
