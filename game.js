@@ -79,6 +79,7 @@ function checkAnswer(currentLevel) {
         }
       }
       else {
+        startOver();
          $("h1").text(`** Game Over *** 
          \nPress any key to Start Again...` );
          let wrongBtn = new Audio("sounds/wrong.mp3");
@@ -114,4 +115,10 @@ function checkAnswer(currentLevel) {
     function playSound(name) {
       var audio = new Audio("sounds/" + name + ".mp3");
       audio.play();
+    }
+
+    function startOver() {
+      level = 0;
+      gamePattern = [];
+      gameStarted = false; 
     }
