@@ -80,7 +80,7 @@ function checkAnswer(currentLevel) {
       }
       else {
          $("h1").text(`** Game Over *** 
-         Press any key to Start Again...` );
+         \nPress any key to Start Again...` );
          let wrongBtn = new Audio("sounds/wrong.mp3");
          wrongBtn.play();
           $("body").addClass("game-over");
