@@ -5,7 +5,17 @@ let userClickedPattern = [ ];
 
 let gameStarted = false;
 
-$(document).keypress(function () {
+$(document).on( "keydown", function () {
+  if (!gameStarted) {
+    // Call the nextSequence function on the first keypress
+    $("#level-title").text("Level " + level);
+    nextSequence();
+    // Set the flag to true to indicate the game has started
+    gameStarted = true;
+  }
+});
+
+$(document).on("touchstart", function () {
   if (!gameStarted) {
     // Call the nextSequence function on the first keypress
     $("#level-title").text("Level " + level);
