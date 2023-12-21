@@ -79,7 +79,8 @@ function checkAnswer(currentLevel) {
         }
       }
       else {
-         $("h1").text("Game Over" );
+         $("h1").text(`** Game Over *** 
+         Press any key to Start Again...` );
          let wrongBtn = new Audio("sounds/wrong.mp3");
          wrongBtn.play();
           $("body").addClass("game-over");
@@ -114,7 +115,3 @@ function checkAnswer(currentLevel) {
       var audio = new Audio("sounds/" + name + ".mp3");
       audio.play();
     }
-/* 
-1. In the sounds folder, there is a sound called wrong.mp3, play this sound if the user got one of the answers wrong.
-
-2. In the styles.css file, there is a class called "game-over", apply this class to the body of the website when the user gets one of the answers wrong and then remove it after 200 milliseconds. */
