@@ -61,22 +61,27 @@ $("#blue").on("click", function () {
 
 function checkAnswer(currentLevel) {
   if (userClickedPattern[currentLevel] === gamePattern[currentLevel]) {
-    // $("h1").text("Success " + level);
-    // console.log("Success");
     if (userClickedPattern.length === gamePattern.length) {
-      //5. Call nextSequence() after a 1000 millisecond delay.
+      // Call nextSequence() after a 1000 millisecond delay.
       setTimeout(function () {
             nextSequence();
           }, 1000);
         }
       }
       else {
-        // $("h1").text("Game Over" );
-        console.log("failure");
+         $("h1").text("Game Over" );
+         let wrongBtn = new Audio("sounds/wrong.mp3");
+         wrongBtn.play();
+          $("body").addClass("game-over");
+          setTimeout(function () {
+            $("body").removeClass("game-over");
+          }, 100);
       }
     };
     
-    
+  
+
+
     function nextSequence() {
       userClickedPattern = [];
 
@@ -99,3 +104,7 @@ function checkAnswer(currentLevel) {
       var audio = new Audio("sounds/" + name + ".mp3");
       audio.play();
     }
+/* 
+1. In the sounds folder, there is a sound called wrong.mp3, play this sound if the user got one of the answers wrong.
+
+2. In the styles.css file, there is a class called "game-over", apply this class to the body of the website when the user gets one of the answers wrong and then remove it after 200 milliseconds. */
